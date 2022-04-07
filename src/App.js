@@ -1,17 +1,18 @@
 import React from 'react';
-import {Posts, UserDetails, Users} from "./components";
 
-export const l = () => {
+import './App.css';
+import {Posts, User, Users} from "./components";
+
+export const App = () => {
     return (
         <div>
             <div className={'divFlex'}>
-                <div><Users/></div>
-                <div><UserDetails/></div>
+                <div className={'usersWidth'}><User/></div>
+                <div className={'usersWidth'}><Users/></div>
             </div>
             <div><Posts/></div>
 
         </div>
     );
 };
-export default class App {
-}
+export default App

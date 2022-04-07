@@ -1,4 +1,6 @@
 .divFlex{
     display: flex;
-    background-color: green;
+}
+.usersWidth{
+    width: 50%;
 }
