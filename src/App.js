@@ -1,11 +1,9 @@
 import React from 'react';
 
-const App = () => {
+export const l = () => {
     return (
         <div>
-          Test
+
         </div>
     );
 };
-
-export default App;
