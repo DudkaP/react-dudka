@@ -1,15 +1,13 @@
 import React, {useEffect, useState} from 'react';
 
 import "../App.css"
+
 import {userService} from "../services";
 import {User} from "./User";
-import {Posts} from "./Posts";
-import {Post} from "./Post";
 
 export const Users = ({getPostsById}) => {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState(null);
-    // const [posts, setPosts] = useState(null);
 
     useEffect(() => {
         userService.getAll().then(({data}) => setUsers(data))
@@ -18,13 +16,8 @@ export const Users = ({getPostsById}) => {
     const getUserId = async (id) => {
         const data = await userService.getById(id);
         setUser(data);
-        console.log(id);
+        // console.log(id);
     }
-    // const getPostsById = async (id) => {
-    //     const postData = await userService.getPostById(id);
-    //     setPosts(postData.data);
-    //     console.log(posts);
-    // }
 
     return (
         <div className={'divFlex'}>

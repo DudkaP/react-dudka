@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {userService} from "../services";
+import React from 'react';
+
 import {Post} from "./Post";
 
 export const Posts = ({posts}) => {
