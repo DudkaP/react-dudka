@@ -4,11 +4,12 @@ import "../App.css"
 import {userService} from "../services";
 import {User} from "./User";
 import {Posts} from "./Posts";
+import {Post} from "./Post";
 
-export const Users = () => {
+export const Users = ({getPostsById}) => {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState(null);
-    const [posts, setPosts] = useState(null);
+    // const [posts, setPosts] = useState(null);
 
     useEffect(() => {
         userService.getAll().then(({data}) => setUsers(data))
@@ -19,11 +20,11 @@ export const Users = () => {
         setUser(data);
         console.log(id);
     }
-    const getPostsById = async (id) => {
-        const postData = await userService.getPostById(id);
-        setPosts(postData.data);
-        console.log(posts);
-    }
+    // const getPostsById = async (id) => {
+    //     const postData = await userService.getPostById(id);
+    //     setPosts(postData.data);
+    //     console.log(posts);
+    // }
 
     return (
         <div className={'divFlex'}>
@@ -32,7 +33,7 @@ export const Users = () => {
                 user && <div>{user.data.username} <br /> {user.data.name} <br/>
                 {user.data.email} <br/> {user.data.phone} <br/> {user.data.email}
                 <button onClick={()=>getPostsById(user.data.id)}>Posts</button> <br/>
-                    {posts && <div>{posts.map(post => <Posts key={post.id} post={post}/>)}</div>}
+
                 </div>
             }
 

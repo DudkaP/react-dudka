@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {userService} from "../services";
+import {Post} from "./Post";
 
-export const Posts = ({post}) => {
-    const {id,body, title} = post;
-    console.log(post)
-    // console.log(title)
+export const Posts = ({posts}) => {
 
     return (
         <div>
-            {id} - {body} - {title}
+            {posts && <div>{posts.map(post => <Post key={post.id} post={post}/>)}</div>}
         </div>
     );
 };
