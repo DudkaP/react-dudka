@@ -22,7 +22,7 @@ export const Users = () => {
     const getPostsById = async (id) => {
         const postData = await userService.getPostById(id);
         setPosts(postData.data);
-        console.log(postData.data);
+        console.log(posts);
     }
 
     return (
@@ -32,7 +32,7 @@ export const Users = () => {
                 user && <div>{user.data.username} <br /> {user.data.name} <br/>
                 {user.data.email} <br/> {user.data.phone} <br/> {user.data.email}
                 <button onClick={()=>getPostsById(user.data.id)}>Posts</button> <br/>
-                    {posts && <div>{posts.map(post => <Posts key={post.id} posts={post}/>)}</div>}
+                    {posts && <div>{posts.map(post => <Posts key={post.id} post={post}/>)}</div>}
                 </div>
             }
 

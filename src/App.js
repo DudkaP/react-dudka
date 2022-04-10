@@ -10,7 +10,7 @@ export const App = () => {
             <div className={'divFlex'}>
                 <div className={'usersWidth'}><Users/></div>
             </div>
-            <div><Posts /></div>
+            {/*<div><Posts /></div>*/}
 
         </div>
     );

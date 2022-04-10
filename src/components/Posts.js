@@ -1,13 +1,13 @@
 import React from 'react';
 
 export const Posts = ({post}) => {
-    // const {id, title} = post;
+    const {id,body, title} = post;
     console.log(post)
     // console.log(title)
 
     return (
         <div>
-            {/*{post} ---*/}
+            {id} - {body} - {title}
         </div>
     );
 };
