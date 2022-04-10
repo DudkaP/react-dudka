@@ -4,6 +4,7 @@ import './App.css';
 import {Posts, Users} from "./components";
 
 export const App = () => {
+
     return (
         <div>
             <div className={'divFlex'}>

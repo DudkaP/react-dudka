@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
-import {userService} from "../services";
+import React from 'react';
 
-export const Posts = ({posts}) => {
-    // const {id, post} = posts;
-    // console.log(posts)
+export const Posts = ({post}) => {
+    // const {id, title} = post;
+    console.log(post)
+    // console.log(title)
 
     return (
         <div>
-            {posts}
+            {/*{post} ---*/}
         </div>
     );
 };
