@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {carService} from "../../services";
 import {Car} from "../Car/Car";
 
-export const Cars = ({newCar}) => {
+export const Cars = ({newCar,setUserForUpdate}) => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
@@ -18,7 +18,7 @@ export const Cars = ({newCar}) => {
 
     return (
         <div>
-            {cars.map(car => <Car key={car.id} car={car}/>)}
+            {cars.map(car => <Car key={car.id} car={car} setUserForUpdate={setUserForUpdate}/>)}
         </div>
     );
 };

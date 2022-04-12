@@ -1,5 +1,12 @@
-export const Car = ({car}) => {
+import {carService} from "../../services";
+
+export const Car = ({car, setUserForUpdate}) => {
     const {id, model, price, year} = car;
+
+    const deleteCar = async () => {
+        await carService.deleteById(id)
+    }
+
     return (
         <div>
             <div>Id.........{id}</div>
@@ -7,6 +14,8 @@ export const Car = ({car}) => {
             <div>Price....{price}</div>
             <div>Year.....{year}</div>
             <br/>
+            <button onClick={() => deleteCar()}>Delete this Car</button>
+            <button onClick={()=>setUserForUpdate(car)}>Update</button>
         </div>
     );
 };
