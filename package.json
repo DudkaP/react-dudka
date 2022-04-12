@@ -12,7 +12,9 @@
     "web-vitals": "^2.1.4",
     "axios": "^0.26.1",
     "react-router-dom": "^6.3.0",
-    "react-hook-form": "^7.29.0"
+    "react-hook-form": "^7.29.0",
+    "joi": "^17.6.0",
+    "@hookform/resolvers": "^2.8.8"
   },
   "scripts": {
     "start": "react-scripts start",
