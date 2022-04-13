@@ -1,10 +1,12 @@
 import {carService} from "../../services";
 
-export const Car = ({car, setUserForUpdate}) => {
+export const Car = ({car, setUserForUpdate,setDelCar}) => {
+
     const {id, model, price, year} = car;
 
     const deleteCar = async () => {
         await carService.deleteById(id)
+        setDelCar(id)
     }
 
     return (

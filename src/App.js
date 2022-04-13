@@ -6,11 +6,13 @@ const App = () => {
     const [userForUpdate, setUserForUpdate] = useState(null);
 
 
+
+
     return (
         <div>
-            <CarForm setNewCar={setNewCar} userForUpdate={userForUpdate}/>
+            <CarForm setNewCar={setNewCar} userForUpdate={userForUpdate} setUserForUpdate={setUserForUpdate}/>
             <hr/>
-            <Cars newCar={newCar} setUserForUpdate={setUserForUpdate}/>
+            <Cars newCar={newCar} setUserForUpdate={setUserForUpdate} userForUpdate={userForUpdate}/>
         </div>
     );
 };
