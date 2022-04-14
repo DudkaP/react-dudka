@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import {Outlet} from "react-router-dom";
+
 import {postService} from "../services";
 import {Post} from "../components";
 
@@ -10,8 +12,9 @@ export const PostsPage = () => {
     },[])
 
     return (
-        <div>
-            {posts.map(post=><Post key={post.id} post={post}/>)}
+        <div style={{display:"flex"}}>
+            <div>{posts.map(post=><Post key={post.id} post={post}/>)}</div>
+            <div><Outlet/></div>
         </div>
     );
 };
