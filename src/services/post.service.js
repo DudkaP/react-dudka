@@ -3,6 +3,11 @@ import {urls} from "../constants";
 
 
 export const postService = {
-    getAll: ()=>axiosService.get(urls.posts),
-    getById:(id)=>axiosService.get(`${urls.posts}/${id}`)
+    getAll: (page, _limit = 4) => axiosService.get(urls.posts, {
+        params: {
+            _start:(page-1)*_limit,
+            _limit:_limit
+        }
+    }),
+    getById: (id) => axiosService.get(`${urls.posts}/${id}`)
 }
