@@ -1,14 +1,12 @@
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Outlet, useSearchParams} from "react-router-dom";
 
 import {postService} from "../services";
 import {Post} from "../components";
-import {MyContext} from "../index";
-import {queryAllByAttribute} from "@testing-library/react";
 
 export const PostsPage = () => {
     const [posts, setPosts] = useState([]);
-    const value = useContext(MyContext);
+    // const value = useContext(MyContext);
 
     const [query, setQuery] = useSearchParams({page:'1'});
 
