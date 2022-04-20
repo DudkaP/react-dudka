@@ -1,7 +1,9 @@
-export const Dogs = () => {
+export const Dogs = (dogPage) => {
+    let dog = dogPage.dogPage;
+
     return (
-        <div>
-            Dogs................
-        </div>
+        <span>
+            {dog}
+        </span>
     );
 };
