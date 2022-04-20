@@ -1,7 +1,7 @@
 export const Dogs = () => {
     return (
         <div>
-            Dogs
+            Dogs................
         </div>
     );
 };
