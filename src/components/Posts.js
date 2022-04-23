@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
+import {loadPosts} from "../redux/actions";
 
 export const Posts = () => {
 
@@ -11,7 +12,7 @@ export const Posts = () => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then((response) => response.json())
             .then((posts) => {
-                dispatch({type:'POSTS', payload: posts})
+                loadPosts(posts, dispatch)
                 console.log(posts)
             });
     },[])
