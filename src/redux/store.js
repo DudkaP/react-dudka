@@ -1,7 +1,14 @@
-import {combineReducers, createStore} from "redux";
-import {userReducer} from "./user.reducer";
-import {postsReducer} from "./posts.reducer";
+import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import counterReducer from "./slices/counter.slice";
+import userReducer from "./slices/user.slice";
 
-let reducer = combineReducers({usersState:userReducer,postsState:postsReducer});
+const rootReducer = combineReducers({
+    counter: counterReducer,
+    user: userReducer
+});
 
-export let store = createStore(reducer);
+const store = configureStore({
+    reducer: rootReducer
+});
+
+export default store;
